@@ -20,8 +20,7 @@ class HistoricalStorageService:
 
         data = data.merge(seasonal_stats, on=['city', 'season'], how='left')
 
-        data['is_anomaly'] = (data['temperature'] < (data['mean_temp'] - 2 * data['std_temp'])) | \
-                             (data['temperature'] > (data['mean_temp'] + 2 * data['std_temp']))
+        data['is_anomaly'] = abs(data['temperature'] - data['mean_temp']) > 2 * data['std_temp']
         
         self.seasonal_stats = seasonal_stats
         self.data = data

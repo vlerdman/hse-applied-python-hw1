@@ -1,0 +1,3 @@
+Sequential Execution Time: 0.11465096473693848
+MultiThreading Parallel Execution Time: 0.16057586669921875
+MultiProcessing Parallel Execution Time: 0.5858712196350098
